@@ -46,7 +46,7 @@ header {
 header h1 {
   font-size: 30px;
   line-height: 1.5;
-  margin: 0 0 0 -40px;
+  margin: 0 0 0 46px;
   font-weight: bold;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: #b5e853;
@@ -58,18 +58,19 @@ header h1 {
 }
 
 h1 img {
-    float: left;
-    margin-left: -2.5em;
-    margin-top: 0.2ex;
+  float: left;
+  margin-left: -2.5em;
+  margin-top: 0.2ex;
 }
 h1 span {
-    margin-left: 1ex;
+  margin-left: 1ex;
 }
 
 header h2 {
   font-size: 18px;
   font-weight: 300;
   color: #666;
+  margin-left: 9ex;
 }
 
 #links .btn {
