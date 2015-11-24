@@ -23,7 +23,7 @@
           <a href="https://launchpad.net/~wesmason/+archive/ubuntu/conn-check" class="btn">Ubuntu PPA</a>
           <a href="https://jujucharms.com/u/ubuntuone-hackers/conn-check/trusty" class="btn">Juju charm</a>
           <a href="https://pypi.python.org/pypi/conn-check" class="btn">PyPI</a>
-          <a href="http://1stvamp.org/verifying-post-deploy-connections-with-conn-check" class="btn">Blog post</a>
+          <a href="http://docs.conn-check.org/" class="btn">Documentation</a>
         </section>
       </div>
     </header>
@@ -33,14 +33,25 @@
         <h3>
 <a id="what-is-conn-check" class="anchor" href="#what-is-conn-check" aria-hidden="true">#</a> What is it?</h3>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non ultrices eros. Proin auctor felis a ex ultricies, nec fringilla velit placerat. Nam ligula ligula, posuere eget velit quis, auctor suscipit lorem. Suspendisse accumsan nec risus sit amet interdum. Aenean euismod pharetra bibendum. In hac habitasse platea dictumst. Aliquam purus nunc, faucibus in lacus non, malesuada laoreet mi. Cras rutrum ut felis vitae laoreet. Proin imperdiet et tellus quis consectetur. Vivamus viverra, metus feugiat eleifend ultrices, nulla magna mattis nunc, eget porttitor turpis diam non leo.</p>
+	<p>
+	<ul>
+	    <li>Network connection verification utility</li>
+	    <li>Multiple protocols</li>
+	    <li>Asynchronous network connections</li>
+	    <li>Monitoring</li>
+	    <li>Testing</li>
+	</ul>
+
+	<em>conn-check</em> is a small utility, written in Python using the <a href="https://twistedmatrix.com/">Twisted</a> network library, that verifies outgoing connections from your application servers to services it depends, e.g. databases, caches, web service APIs, etc.</p>
+	<p>
+	<em>conn-check</em> is used not only to verify network dependency changes at deploy time, and during each step in a CI/CD pipeline, but can also be used in continuous monitoring, e.g. with tools like <a href="https://www.nagios.org/">Nagios</a>.</p>
 
 <h3>
 <a id="why-should-i-use-conn-check" class="anchor" href="#why-should-i-use-conn-check" aria-hidden="true">#</a> But, why?</h3>
 
-<p>Duis arcu magna, ultricies sed urna non, interdum lacinia ipsum. Donec porttitor blandit posuere. Integer vitae consectetur diam. Phasellus finibus lectus non libero tristique, ut malesuada nisi rhoncus. Aliquam congue vulputate condimentum. Phasellus accumsan leo at massa dignissim, eget eleifend eros porttitor. Maecenas blandit justo nulla, nec hendrerit velit suscipit in. Sed ullamcorper ex vitae orci sollicitudin, nec auctor diam sodales. Vivamus sed lectus nec enim malesuada bibendum ornare ut enim. In cursus augue maximus, ultrices purus nec, laoreet mi. Quisque sed turpis turpis. Vivamus dignissim augue at diam tempor, et posuere eros efficitur. Nam varius tortor eget justo molestie, sit amet rutrum nunc ullamcorper.</p>
-
-
+	<p>
+	conn-checks original purpose, as part of the <em>UbuntuOne</em> project, was to verify holes were poked in the production firewalls at deploy time to allow connections to various dependencies, such as the Amazon S3 API, 7digital, internal Cassandra, memcached, PostgreSQL, and other internal web services.
+	However, it now also provides general purpose utility for visibility of actual connectivity to services your app requires, and even has tooling for modifying firewalls, generating configurations from app frameworks, and even the ability to generate configuration from a live environment using packet sniffing.
 
       </section>
     </div>
