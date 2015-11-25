@@ -44,18 +44,37 @@
 
 	<em>conn-check</em> is a small utility, written in Python using the <a href="https://twistedmatrix.com/">Twisted</a> network library, that verifies outgoing connections from your application servers to services it depends on, e.g. databases, caches, web service APIs, etc.</p>
 	<p>
-	<em>conn-check</em> is used not only to verify network dependency changes at deploy time, and during each step in a CI/CD pipeline, but can also be used in continuous monitoring, e.g. with tools like <a href="https://www.nagios.org/">Nagios</a>.</p>
+	<em>conn-check</em> is used not only to verify network dependency changes at deploy time, and during each step in a CI/CD pipeline, but can also be used in continuous monitoring, e.g. with tools like <a href="https://conn-check.readthedocs.org/en/latest/tutorial-part-1.html#using-conn-check-with-nagios">Nagios</a>.</p>
 
 <h3>
 <a id="why-should-i-use-conn-check" class="anchor" href="#why-should-i-use-conn-check" aria-hidden="true">#</a> But, why?</h3>
 
 	<p>
 	conn-checks original purpose, as part of the <em>UbuntuOne</em> project, was to verify holes were poked in the production firewalls at deploy time to allow connections to various dependencies, such as the Amazon S3 API, 7digital, internal Cassandra, memcached, PostgreSQL, and other internal web services.
-	However, it now also provides a general purpose utility for visibility of connectivity to services your app requires, and even has tooling for modifying firewalls, <a href="https://pypi.python.org/pypi/conn-check-configs">generating configurations</a> from app frameworks, and even the ability to generate configuration from a live environment using packet sniffing.
+	However, it now also provides a general purpose utility for visibility of connectivity to services your app requires, and even has tooling for modifying firewalls, <a href="https://pypi.python.org/pypi/conn-check-configs">generating configurations</a> from app frameworks, and even the ability to generate configuration from a live environment using packet sniffing.</p>
 
+	<p>
+	Better yet, conn-check doesn't just check basic connectivity to a service, it does deep protocol inspection, from the base UDP/TCP layer, to TLS, and then <em>real</em> connectivity service, including authentication and other configuration (e.g. schemas for databases, key options in caches etc.).</p>
+
+<h3>
+<a id="microservices" class="anchor" href="#microservices" aria-hidden="true">#</a> What about microservices?</h3>
+
+	<p>Given the rise of microservices and a greater number of inter-dependencies between disparate services, conn-check makes the perfect tool for checking live availablity of your "hard requirements", which in the case of microservices <strong>is</strong> connectivity to dependent services.
+	</p>
+	<p>For more info on adding conn-check to your app, try the <a href="https://conn-check.readthedocs.org/en/latest/tutorial-part-1.html">tutorial</a> for size.
+	</p>
       </section>
     </div>
 
-    
+    <footer>
+      <div class="container">
+	<section>
+	    <p>To make improvements to this page, you can <a href="https://github.com/1stvamp/conn-check-webpage">fork the repo</a>.
+	    </p>
+	    <p>conn-check and conn-check-configs are copyright 2015 Canonical Ltd., conn-check is released under the terms of the GPLv3 license, while conn-check-configs is released under the terms of the LGPLv3 license.
+	    </p>
+	</section>
+      </div>
+    </footer>
   </body>
 </html>
